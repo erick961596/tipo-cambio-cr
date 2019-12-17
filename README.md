@@ -1,4 +1,4 @@
-# tipo-cambio-cr
+# TIPO DE CAMBIO COSTA RICA
 Tipo de cambio de Costa Rica
 # Pasos para hacer uso
 
