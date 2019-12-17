@@ -38,6 +38,7 @@ define('WPTCR_TIME_LIMIT', 4);
 function wptcrI_tipo_cambio($tipo = "", $fecha = ""){
     $correoElectronico ="correoElectronico@gmail.com";
     $tokenBCR="tokenBCR";
+    $nombreRegistrado="nombreRegistrado";
     date_default_timezone_set('America/Costa_Rica');
     $fecha_tc = empty($fecha) ? date("d/m/Y") : $fecha;
     $fecha_actual = date('Y-m-d H:i:s');
@@ -53,7 +54,7 @@ function wptcrI_tipo_cambio($tipo = "", $fecha = ""){
     }
 
     $tipo_cambio = 0;
-    $url_ws = WPTCR_IND_ECONOM_WS . "/" . WPTCR_IND_ECONOM_METH . "?Indicador=" . $tipo_tc . "&FechaInicio=" . $fecha_tc . "&FechaFinal=" . $fecha_tc . "&Nombre=instacredit&SubNiveles=N&CorreoElectronico=" . $correoElectronico ."&Token=" . $tokenBCR;
+    $url_ws = WPTCR_IND_ECONOM_WS . "/" . WPTCR_IND_ECONOM_METH . "?Indicador=" . $tipo_tc . "&FechaInicio=" . $fecha_tc . "&FechaFinal=" . $fecha_tc . "&Nombre=".$nombreRegistrado."&SubNiveles=N&CorreoElectronico=" . $correoElectronico ."&Token=" . $tokenBCR;
 
     if($tipo_tc == WPTCR_COMPRA_CR){
         $wptcr_compra_cr = get_option('WPTCR_COMPRA_CR');
